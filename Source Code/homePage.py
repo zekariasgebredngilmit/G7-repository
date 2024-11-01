@@ -19,8 +19,9 @@ backgroundLabel.place(x=0, y=0)
 # FUNCTIONS
 
 def submit():
-    if toVar.get() == "" or fromVar.get() == "" or nameEntry == "" or classVar.get() == "" or \
-            departureEntry == "" or ageEntry == "":
+    if toVar.get() == "" or fromVar.get() == "" or nameEntry.get() == "" or classVar.get() == "" or \
+        departureEntry.get() == "" or ageEntry.get() == "":
+
         messagebox.showerror('Error', 'All Fields Are Required!')
 
     else:
