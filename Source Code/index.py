@@ -16,10 +16,11 @@ backgroundLabel.place(x=0, y=0)
 # =========================================================
 # Functions
 def join_now():
+    try:
+       import SignUp 
     index_window.destroy()
-    import SignUp
-
-
+except ImportEroor:
+    messagebox.showerror("Error", "signUP module not found!")
 # =========================================================
 # login button
 joinNow = Button(index_window, text="JOIN NOW", font=('Comic Sans MS', 12, 'bold'), bd=0,
