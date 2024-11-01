@@ -21,11 +21,20 @@ backgroundLabel.place(x=0, y=0)
 def hash_password(password):
     salt = bcrypt.gensalt()
     return bcrypt.hashpw(password.encode(), salt)
+    
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(pattern, email) is not None
+
 def signup_user():
     if usernameEntry.get() == "Username" or usernameEntry.get() == "" or emailEntry.get() == "Email" or \
             emailEntry.get() == "" or passwordEntry.get() == "Password" or conformEntry.get() == "Conform Password" or \
             conformEntry.get() == "":
         messagebox.showerror('Error', 'All Fields Are Required!')
+
+    elif not is_valid_email(emailEntry.get()):
+        messagebox.showerror('Error', 'Please Enter a Valid Email Address!')
+        
     elif passwordEntry.get() != conformEntry.get():
         messagebox.showerror('Error', 'password Mismatch!')
     elif check.get() == 0:
