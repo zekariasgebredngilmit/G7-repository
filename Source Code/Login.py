@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 import hashlib
+import os
 
 # =========================================================
 # GUI Interface
